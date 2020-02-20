@@ -1,4 +1,4 @@
-#  mofron-comp-close
+# mofron-comp-close
 [mofron](https://mofron.github.io/mofron/) is module based frontend framework.
 
 close component for mofron
@@ -8,21 +8,35 @@ close component for mofron
 
 # Install
 ```
-npm install mofron  mofron-comp-close
+npm install mofron mofron-comp-close
 ```
 
 # Sample
 ```html
+<require>
+    <tag load="mofron-comp-frame">Frame</tag>
+    <tag load="mofron-comp-close">Close</tag>
+    <tag load="mofron-effect-hrzpos">Hrzpos</tag>
+</require>
 
-
+<Frame name=frame>
+    <Close effect=Hrzpos:"right" close-tgt=@frame></Close>
+</Frame>
 ```
+
 # Parameter
 
-|Simple<br>Param | Parameter Name | Type | Description |
-|:--------------:|:---------------|:-----|:------------|
-| | closeTgt | string/component | string: component name |
-| | | | component: close target component |
-| | closeComp | component | close component |
-| | size | string (size) | width size |
-| | | string (sizde) | height size |
+| Short<br>Form | Parameter Name | Type | Description |
+|:-------------:|:---------------|:-----|:------------|
+| | closeTgt | mixed | string: component object key |
+| | | | mofron.class.Component: close target component |
+| | | | undefined: call as getter |
+| | closeComp | mofron.class.Component | close component |
+| | | | undefined: call as getter |
+| | height | string(size) | height size |
+| | | | undefined: call as getter |
+| | | key-value | style option  |
+| | width | string(size) | width size |
+| | | | undefined: call as getter |
+| | | key-value | style option |
 
