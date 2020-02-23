@@ -45,6 +45,7 @@ module.exports = class extends mofron.class.Component {
 	        new Text({ text: "&times;", style: { "text-align": "center" }, size: "0.3rem" })
 	    );
 	    this.child(this.closeComp());
+	    this.childDom(this.closeComp().childDom());
             
 	    this.size("0.3rem","0.3rem");
         } catch (e) {
@@ -114,9 +115,8 @@ module.exports = class extends mofron.class.Component {
      */
     height (prm, opt) {
         try {
-	    let ret = super.height(prm, opt);
-            this.closeComp().height(prm,opt);
-	    return ret;
+	    this.rootDom()[0].style({ "height" : prm }, opt);
+	    return this.closeComp().height(prm, opt);
 	} catch (e) {
             console.error(e.stack);
             throw e;
@@ -135,9 +135,48 @@ module.exports = class extends mofron.class.Component {
      */
     width (prm, opt) {
         try {
-            let ret = super.width(prm, opt);
-            this.closeComp().width(prm,opt);
-            return ret;
+	    this.rootDom()[0].style({ "width" : prm }, opt);
+            return this.closeComp().width(prm, opt);
+        } catch (e) {
+            console.error(e.stack);
+            throw e;
+        }
+    }
+
+    /**
+     * main color for close component setter/getter
+     * 
+     * @param (mixed(color)) string: color name, #hex
+     *                       array: [red, green, blue, (alpha)]
+     *                       undefined: call as getter
+     * @param (key-value) style option
+     * @return (mixed) string: close main color
+     *                 null: not set
+     * @type parameter
+     */
+    mainColor (prm,opt) {
+        try {
+            this.closeComp().mainColor(prm,opt);
+	} catch (e) {
+            console.error(e.stack);
+            throw e;
+	}
+    }
+    
+    /**
+     * accent color for close component setter/getter
+     * 
+     * @param (mixed(color)) string: color name, #hex
+     *                       array: [red, green, blue, (alpha)]
+     *                       undefined: call as getter
+     * @param (key-value) style option
+     * @return (mixed) string: close main color
+     *                 null: not set
+     * @type parameter
+     */
+    accentColor (prm,opt) {
+        try {
+            this.closeComp().accentColor(prm,opt);
         } catch (e) {
             console.error(e.stack);
             throw e;

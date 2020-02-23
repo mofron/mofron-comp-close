@@ -39,4 +39,12 @@ npm install mofron mofron-comp-close
 | | width | string(size) | width size |
 | | | | undefined: call as getter |
 | | | key-value | style option |
+| | mainColor | mixed(color) | string: color name, #hex |
+| | | | array: [red, green, blue, (alpha)] |
+| | | | undefined: call as getter |
+| | | key-value | style option |
+| | accentColor | mixed(color) | string: color name, #hex |
+| | | | array: [red, green, blue, (alpha)] |
+| | | | undefined: call as getter |
+| | | key-value | style option |
 
