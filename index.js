@@ -7,7 +7,6 @@
 const Text = require("mofron-comp-text");
 const Click = require("mofron-event-click");
 const comutl = mofron.util.common;
-const ConfArg = mofron.class.ConfArg;
 
 module.exports = class extends mofron.class.Component {
     /**
@@ -94,7 +93,7 @@ module.exports = class extends mofron.class.Component {
                         throw e;
 		    }
 		}
-                prm.event(new Click(new ConfArg(clk,this)));
+                prm.event(new Click(clk,this));
 	    }
             return this.innerComp("closeComp", prm, mofron.class.Component);
         } catch (e) {
