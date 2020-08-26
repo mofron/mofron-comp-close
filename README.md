@@ -13,11 +13,11 @@ npm install mofron mofron-comp-close
 
 # Sample
 ```html
-<require>
+<setting>
     <tag load="mofron-comp-frame">Frame</tag>
     <tag load="mofron-comp-close">Close</tag>
     <tag load="mofron-effect-hrzpos">Hrzpos</tag>
-</require>
+</setting>
 
 <Frame name=frame>
     <Close effect=Hrzpos:"right" close-tgt=@frame></Close>

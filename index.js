@@ -18,7 +18,7 @@ module.exports = class extends mofron.class.Component {
     constructor (prm) {
         try {
             super();
-            this.name("Close");
+            this.modname("Close");
 	    /* init config */
 	    this.confmng().add("closeTgt", { type: "Component" });
 	    /* set config */
